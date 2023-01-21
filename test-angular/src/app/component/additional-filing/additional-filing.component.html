@@ -1,0 +1,52 @@
+<div class="sub-title-header mt-5 mb-3">
+    In case of late filing and payment, or additional filing
+</div>
+<div [formGroup]="form">
+    <div class="row">
+        <div class="d-flex col-4 col-md-8 align-items-center">
+            <div>3. Surchange</div>
+        </div>
+        <div class="col">
+            <div class="input-group mb-3">
+                <input type="text" formControlName="surcharge" 
+                class="form-control" 
+                mask="separator.3"
+                thousandSeparator="," [allowNegativeNumbers]="true"
+                 numbersOnly readonly>
+                <span class="input-group-text">THB</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="d-flex col-4 col-md-8 align-items-center">
+            <div>4. Penalty</div>
+        </div>
+        <div class="col">
+            <div class="input-group mb-3">
+                <input type="text" formControlName="penalty" 
+                class="form-control"   
+                mask="separator.3"
+                thousandSeparator="," [allowNegativeNumbers]="true"
+                 numbersOnly readonly>
+                <span class="input-group-text">THB</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="d-flex col-4 col-md-8 align-items-center">
+            <div>5. Total amount of VAT, surchange, and penalty to be remitted(2.+3.+4.)</div>
+        </div>
+        <div class="col">
+            <div class="input-group mb-3">
+                <input type="text" formControlName="totalAmount" 
+                class="form-control" 
+                mask="separator.3"
+                thousandSeparator="," [allowNegativeNumbers]="true"
+                 numbersOnly readonly>
+                <span class="input-group-text">THB</span>
+            </div>
+        </div>
+    </div>
+</div>

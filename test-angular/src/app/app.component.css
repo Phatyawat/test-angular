@@ -1,0 +1,67 @@
+.step-circle{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    flex-shrink: 0;
+    border: #000 1px solid;
+    position: relative;
+}
+
+.step-circle-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.step-line{
+    margin: auto;
+    padding-top: 13px;
+    border-bottom: #000  solid  1px;
+}
+
+.finish-line{
+    border-color: #000;
+}
+
+.finish-step{
+    border-color: #000;
+    background-color: #000;
+    color: white;
+}
+
+.undo-step{
+    border-color: #DDD;
+    color: #DDD;
+}
+
+.title-page-style{ 
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.content-block{
+    border: #000 solid 1px;
+    border-radius: 5px;
+}
+
+.btn-outline-dark{
+    width: 120px;
+    padding: 1rem 2rem 1rem  2rem;
+    border-radius: 50px;
+}
+
+.btn-dark{
+    width: 120px;
+    padding: 1rem 2rem 1rem  2rem;
+    border-radius: 50px;
+    margin-left: 2rem !important;
+}
+
+.confirm{
+    width: fit-content !important;
+}
+

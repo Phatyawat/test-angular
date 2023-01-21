@@ -1,0 +1,31 @@
+<div class="title-header mb-5">
+
+  <h1>1. Tax Filing Detail</h1>
+
+</div>
+<div [formGroup]="form">
+  <div class="mt-5">
+    <div class="mb-3">Type of filing&nbsp;<span style="color: red">*</span></div>
+    <mat-radio-group formControlName="filingType" class="example-radio-group">
+      <mat-radio-button class="example-radio-button" value="0">Ordinary Filing</mat-radio-button>
+      <mat-radio-button style="margin-left: 2rem;" class="example-radio-button" value="1">Additional
+        Filing</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="my-5">
+    <div class="mb-3">Vat Month&nbsp;<span style="color: red">*</span></div>
+    <div class="row">
+      <div class="col-2">
+        <select class="form-select" formControlName="month">
+          <option [value]="n" *ngFor="let n of monthUseList">{{n}}</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <select class="form-select" formControlName="year">
+          <option [value]="n" *ngFor="let n of yearList">{{n}}</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</div>

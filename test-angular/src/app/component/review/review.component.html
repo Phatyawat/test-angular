@@ -1,0 +1,97 @@
+<div class="mb-5">
+    <div class="title-header mb-3">
+
+        <h1>Tax Filing Detail</h1>
+
+    </div>
+    <div class="row">
+
+        <div class="col-4 col-md-2">
+            <div class="sub-title-header">
+                Type of filing
+            </div>
+        </div>
+
+        <div class="col">
+            <div>
+                {{value.filingType == "0" ? "Ordinary Filing" : "Additional Filing"}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-4 col-md-2">
+            <div class="sub-title-header">
+                VAT Month
+            </div>
+        </div>
+
+        <div class="col">
+            <div>
+               {{value.month}}  {{value.year}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-5">
+    <div class="title-header mb-3">
+
+        <h1>Tax Computation</h1>
+
+    </div>
+    <div class="row mb-3">
+        <div class="col-6 col-md-8 sub-title-header">
+            Type value of tyaxable electroniuc service exclusive of VAT
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="money-text-align">
+                {{value.saleAmount | currency:' '}} THB
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+
+        <div class="col-6 col-md-8">
+            <div class="sub-title-header">
+                Total VAT to be remitted
+            </div>
+            <div>
+                (7% of Total value of taxable electonic service exclusive of VAT)
+            </div>
+        </div>
+        <div class="d-flex col-6 col-md-4 align-items-center justify-content-end">
+            <div class="money-text-align">
+                {{value.taxAmount | currency:' '}} THB
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+
+        <div class="col-6 col-md-8 sub-title-header">
+
+            Total Amount Payable
+
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="money-text-align">
+                <h3 class="sub-title-header">{{value.totalAmount | currency:' '}} THB</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-5">
+    <div class="title-header mb-3">
+
+        <h1>Declaration</h1>
+
+    </div>
+    <div>
+        I here by certify that information given above are true and correrct and agree to be bound by such information.
+    </div>
+</div>

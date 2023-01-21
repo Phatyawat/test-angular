@@ -1,0 +1,44 @@
+<div class="title-header mb-5">
+
+    <h1>2. Tax Computation</h1>
+
+</div>
+
+<div class="sub-title-header my-3">
+    Provide total value taxable electronic service&nbsp;<span style="color: red">*</span>
+</div>
+<div [formGroup]="form" >
+    <div class="row">
+        <div class="d-flex col-4 col-md-8 align-items-center">
+            <div>1. Total value of taxable electronic service exclusive of VAT</div>
+        </div>
+        <div class="col">
+            <div class="input-group  mb-3">
+                <input  formControlName="saleAmount"  
+                mask="separator.3"
+                thousandSeparator="," [allowNegativeNumbers]="true"
+                 class="form-control " numbersOnly>
+                <span class="input-group-text">THB</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex col-4 col-md-8 align-items-center">
+            <div>2. Total VAT to be remitted (7% of 1.)</div>
+        </div>
+        <div class="col">
+            <div class="input-group has-validation mb-3">
+                <input type="text" 
+                formControlName="taxAmount" 
+                mask="separator.3"
+                thousandSeparator="," 
+                [allowNegativeNumbers]="true"
+                 class="form-control" [ngClass]="checkError('taxAmount') ? 'is-invalid' : ''"  numbersOnly>
+                <span class="input-group-text ">THB</span>
+                <div class="invalid-feedback">
+                    หากเกินให้แสดงข้อความเตือน “Invalid Tax” ไม่กำหนดรูปแบบ
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

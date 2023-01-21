@@ -1,0 +1,68 @@
+
+<div class="d-flex justify-content-center title-page-style">
+  Submit tax Filing
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+
+    <div class="col-4">
+      <div class="row">
+        <div class="step-circle" [ngClass]="isStepFirst?'':'finish-step'">
+          <div class="step-circle-content">1</div>
+        </div>
+        <div class="col-sm p-0">
+          <div class="step-line" [ngClass]="isStepFirst?'undo-step':''">
+
+          </div>
+        </div>
+        <div class="step-circle" [ngClass]="isStepFirst?'undo-step':''">
+          <div class="step-circle-content">2</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row mt-5 justify-content-center">
+
+    <div class="col">
+
+      <mat-card>
+        <mat-card-content>
+          <div class="px-5">
+            <div *ngIf="isStepFirst">
+              <app-tax-filing-detail [form]="form"></app-tax-filing-detail>
+              <app-tax-computation [form]="form"></app-tax-computation>
+              <app-additional-filing [hidden]="form.get('filingType').value == '0'"
+                [form]="form"></app-additional-filing>
+            </div>
+
+            <div *ngIf="!isStepFirst">
+              <app-review [value]="form.value"></app-review>
+            </div>
+          </div>
+
+
+        </mat-card-content>
+      </mat-card>
+
+      <div *ngIf="isStepFirst" class=" my-5">
+
+        <button type="button" class="btn btn-outline-dark">Back</button>
+        <button type="button" (click)="onClickNext()" class="ml-3 btn btn-dark">Next</button>
+
+      </div>
+
+      <div *ngIf="!isStepFirst" class="d-flex  justify-content-center my-5">
+        <button type="button" (click)="openDialog()"  class="ml-3 btn btn-dark confirm">Confirm and
+          Submit</button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
